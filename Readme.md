@@ -3,10 +3,6 @@
 
 This is a simple ThreeJS project that creates an interactive globe visualization with country hexagons, city labels, and arcs to show connections between cities.
 
-## Demo
-
-Check out the live demo [here](https://example.com).
-
 ## Technologies
 
 - [ThreeJS](https://threejs.org/)
