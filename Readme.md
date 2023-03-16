@@ -7,7 +7,7 @@ This is a simple ThreeJS project that creates an interactive globe visualization
 
 - [ThreeJS](https://threejs.org/)
 - [ThreeGlobe](https://github.com/vasturiano/three-globe)
-``
+
 
 ## Installation
 
