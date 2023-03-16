@@ -25,6 +25,12 @@ add your cities info in the `/assets/lines.json`
 the lines are executed in an order if you want a line or flight to go from one city to another and from that to another you must change the order from 1 to 2.
 
 i've changed set different colors on different status if the `status` is `true` then the color will be green and if the `status` is `false`. 
+you can also change it in the main.js file 
+```js
+.arcColor((e) => {
+    return e.status ? colors.green : colors.red
+})
+```
 ```js
 {
       "type": "pull",
