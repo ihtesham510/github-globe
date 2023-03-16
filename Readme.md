@@ -74,7 +74,7 @@ you can also change it in the main.js file
       "endLng": "-73.998978",
       "arcAlt": 0.5
 }
-`
+```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
