@@ -120,6 +120,54 @@
       "city": "Niagra Falls",
       "lat": "43.07527991269738",
       "lng": "-79.06879172782482"
+    },
+    {
+      "text": "Australia",
+      "size": 1.0,
+      "country": "Australia",
+      "city": "Perth",
+      "lat": "-31.9525193866145",
+      "lng": "115.86186518523245"
+    },
+    {
+      "text": "Malaysia",
+      "size": 1.0,
+      "country": "Malaysia",
+      "city": "Kuala Lumpur",
+      "lat": "3.1228804659689637",
+      "lng": "101.68774249268438"
+    },
+    {
+      "text": "India",
+      "size": 1.0,
+      "country": "India",
+      "city": "Chennai",
+      "lat": "13.082624005312823",
+      "lng": "80.27106362029615"
+    },
+    {
+      "text": "Yemen",
+      "size": 1.0,
+      "country": "Yemen",
+      "city": "Sana'a",
+      "lat": "15.36959526115816",
+      "lng": "44.19130073735284"
+    },
+    {
+      "text": "Nigeria",
+      "size": 1.0,
+      "country": "Nigeria",
+      "city": "Abuja",
+      "lat": "9.07921291278433",
+      "lng": "7.400431293445461"
+    },
+    {
+      "text": "Brazil",
+      "size": 1.0,
+      "country": "Brazil",
+      "city": "Brasilia",
+      "lat": "-15.797145415807751",
+      "lng": "-47.892200612268226"
     }
   ]
 }
