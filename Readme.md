@@ -1,14 +1,29 @@
-## Dependencies
-- three
-- three-globe
+
+# ThreeJS Globe Visualization
+
+This is a simple ThreeJS project that creates an interactive globe visualization with country hexagons, city labels, and arcs to show connections between cities.
+
+## Demo
+
+Check out the live demo [here](https://example.com).
+
+## Technologies
+
+- [ThreeJS](https://threejs.org/)
+- [ThreeGlobe](https://github.com/vasturiano/three-globe)
+``
+
+## Installation
+
+1. Clone the repo: `git clone https://github.com/yourusername/your-repo.git`
+2. Install dependencies: `npm install`
+3. Run the app: `npm start`
 
 ## Usage
-```bash
-npm i
-npm run dev
-```
 
-## Adding cities
+You can customize the visualization by modifying the `style.css`, `map.json`, `lines.json`, and `custom.geo.json` files. 
+
+#### Adding cities
 just add your city info in `assets/map.json`
 ```js
     {
@@ -20,7 +35,7 @@ just add your city info in `assets/map.json`
       "lng": "/*  longitute quardinates */"
     },
 ```
-## Adding your own flights or lines
+#### Adding your own flights or lines
 add your cities info in the `/assets/lines.json`
 the lines are executed in an order if you want a line or flight to go from one city to another and from that to another you must change the order from 1 to 2.
 
@@ -59,5 +74,9 @@ you can also change it in the main.js file
       "endLng": "-73.998978",
       "arcAlt": 0.5
 }
-```
+`
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
