@@ -31,7 +31,7 @@ just add your city info in `assets/map.json`
       "lng": "/*  longitute quardinates */"
     },
 ```
-#### Adding your own flights or lines
+#### Adding your own arcs
 add your cities info in the `/assets/lines.json`
 the lines are executed in an order if you want a line or flight to go from one city to another and from that to another you must change the order from 1 to 2.
 
