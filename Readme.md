@@ -11,7 +11,7 @@ This is a simple ThreeJS project that creates an interactive globe visualization
 
 ## Installation
 
-1. Clone the repo: `git clone https://github.com/yourusername/your-repo.git`
+1. Clone the repo: `git clone https://github.com/ihtesham510/github-globe`
 2. Install dependencies: `npm install`
 3. Run the app: `npm start`
 
