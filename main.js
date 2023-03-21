@@ -2,9 +2,9 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import ThreeGlobe from "three-globe";
-import countries from "./assets/custom.geo.json"
-import map from "./assets/map.json"
-import lines from "./assets/lines.json"
+import countries from "./assets/custom.geo.json";
+import map from "./assets/map.json";
+import lines from "./assets/lines.json";
 
 const colors = {
   skyblue: "#0054ad",
@@ -15,8 +15,8 @@ const colors = {
   red: "#ff0000",
   white: "#ffffff",
   black: "#000000",
-  pink: "#a10078"
-}
+  pink: "#a10078",
+};
 
 // adding a scene
 const scene = new THREE.Scene();
@@ -24,7 +24,7 @@ const scene = new THREE.Scene();
 // globe
 const globe = new ThreeGlobe({
   waitForGlobeReady: true,
-  animateIn: true
+  animateIn: true,
 })
   .hexPolygonsData(countries.features)
   .hexPolygonResolution(3)
@@ -48,26 +48,26 @@ const globe = new ThreeGlobe({
       .pointRadius(0.09)
       .arcsData(lines.pulls)
       .arcColor((e) => {
-        return e.status ? colors.green : colors.red
+        return e.status ? colors.green : colors.red;
       })
       .arcAltitudeAutoScale(true)
       .arcAltitude(0.2)
       .arcStroke(() => {
-        return 0.7
+        return 0.7;
       })
       .arcDashLength(0.5)
       .arcDashGap(4)
       .arcDashAnimateTime(1000)
-      .arcsTransitionDuration(500).arcDashInitialGap((e) => e.order * 1)
-  })
+      .arcsTransitionDuration(500)
+      .arcDashInitialGap((e) => e.order * 1);
+  });
 
-
-const globematerial = globe.globeMaterial()
-globematerial.color = new THREE.Color(0x002330)
-globematerial.emissive = new THREE.Color(0x000d12)
+const globematerial = globe.globeMaterial();
+globematerial.color = new THREE.Color(0x002330);
+globematerial.emissive = new THREE.Color(0x000d12);
 globematerial.emissiveIntensity = 1;
-globematerial.shininess = 0.5
-scene.add(globe)
+globematerial.shininess = 0.5;
+scene.add(globe);
 
 // adding a camera
 const sizes = {
@@ -75,9 +75,9 @@ const sizes = {
   h: window.innerHeight,
 };
 const camera = new THREE.PerspectiveCamera(45, sizes.w / sizes.h);
-camera.position.z = 20
-camera.position.x = 60
-camera.position.y = 10
+camera.position.z = 20;
+camera.position.x = 60;
+camera.position.y = 10;
 scene.add(camera);
 
 // adding  lights
@@ -85,9 +85,9 @@ scene.add(camera);
 // light.position.set(10, 10, 10);
 // scene.add(light);
 const dlight = new THREE.DirectionalLight(0xffffff, 2);
-dlight.position.set(-900, 10, 400)
-const dlightHelper1 = new THREE.DirectionalLightHelper(dlight, 5)
-scene.add(dlightHelper1)
+dlight.position.set(-900, 10, 400);
+const dlightHelper1 = new THREE.DirectionalLightHelper(dlight, 5);
+scene.add(dlightHelper1);
 camera.add(dlight);
 // const dlight1 = new THREE.DirectionalLight(0x7982f6, 1);
 // dlight1.position.set(-500, 10, 200)
@@ -105,7 +105,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(sizes.w, sizes.h);
 renderer.render(scene, camera);
-renderer.setPixelRatio(window.devicePixelRatio)
+renderer.setPixelRatio(window.devicePixelRatio);
 
 // adding orbit controls
 
