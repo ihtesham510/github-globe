@@ -6,7 +6,6 @@ import countries from "./assets/custom.geo.json"
 import map from "./assets/map.json"
 import lines from "./assets/lines.json"
 
-
 const colors = {
   skyblue: "#0054ad",
   green: "#038510",
@@ -21,8 +20,6 @@ const colors = {
 
 // adding a scene
 const scene = new THREE.Scene();
-
-
 
 // globe
 const globe = new ThreeGlobe({
@@ -72,8 +69,6 @@ globematerial.emissiveIntensity = 1;
 globematerial.shininess = 0.5
 scene.add(globe)
 
-
-
 // adding a camera
 const sizes = {
   w: window.innerWidth,
@@ -84,9 +79,6 @@ camera.position.z = 20
 camera.position.x = 60
 camera.position.y = 10
 scene.add(camera);
-
-
-
 
 // adding  lights
 // const light = new THREE.AmbientLight(0xbbbbbb, 0.2);
@@ -103,10 +95,6 @@ camera.add(dlight);
 // const dlight2 = new THREE.DirectionalLight(0x8566cc, 0.5);
 // dlight2.position.set(-500, 10, 200)
 // scene.add(dlight2);
-
-
-
-
 
 // finally rendering everything into the canvas
 const canvas = document.querySelector(".webgl");
