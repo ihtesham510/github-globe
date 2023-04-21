@@ -111,9 +111,10 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+controls.enableZoom = true;
 controls.enablePan = false;
-controls.maxDistance = 200;
-controls.minDistance = 300;
+controls.maxDistance = 500;
+controls.minDistance = 200;
 
 // update the window everytime it is resized
 
