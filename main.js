@@ -5,6 +5,7 @@ import ThreeGlobe from "three-globe";
 import countries from "./assets/custom.geo.json";
 import map from "./assets/map.json";
 import lines from "./assets/lines.json";
+import * as dat from 'dat.gui'
 
 const colors = {
   skyblue: "#0054ad",
@@ -16,7 +17,7 @@ const colors = {
   white: "#ffffff",
   black: "#000000",
   pink: "#a10078",
-};
+}
 
 // adding a scene
 const scene = new THREE.Scene();
@@ -33,6 +34,10 @@ const globe = new ThreeGlobe({
   .atmosphereColor(colors.blue)
   .atmosphereAltitude(0.1)
   .onGlobeReady(() => {
+    setTimeout(() => {
+      document.querySelector("#loading").classList.replace('display', 'hidden')
+      addgui()
+    }, 100);
     globe
       .labelsData(map.maps)
       .labelColor(() => colors.yellow)
@@ -80,21 +85,13 @@ camera.position.x = 60;
 camera.position.y = 10;
 scene.add(camera);
 
-// adding  lights
-// const light = new THREE.AmbientLight(0xbbbbbb, 0.2);
-// light.position.set(10, 10, 10);
-// scene.add(light);
-const dlight = new THREE.DirectionalLight(0xffffff, 2);
+/*   light   */
+const dlight = new THREE.DirectionalLight(0xffffff, 1);
 dlight.position.set(-900, 10, 400);
-const dlightHelper1 = new THREE.DirectionalLightHelper(dlight, 5);
-scene.add(dlightHelper1);
+// const dlightHelper1 = new THREE.DirectionalLightHelper(dlight, 5);
+// scene.add(dlightHelper1);
 camera.add(dlight);
-// const dlight1 = new THREE.DirectionalLight(0x7982f6, 1);
-// dlight1.position.set(-500, 10, 200)
-// scene.add(dlight1);
-// const dlight2 = new THREE.DirectionalLight(0x8566cc, 0.5);
-// dlight2.position.set(-500, 10, 200)
-// scene.add(dlight2);
+
 
 // finally rendering everything into the canvas
 const canvas = document.querySelector(".webgl");
@@ -115,6 +112,8 @@ controls.enableZoom = true;
 controls.enablePan = false;
 controls.maxDistance = 500;
 controls.minDistance = 200;
+controls.saveState(controls.minDistance = 300)
+window.addEventListener('wheel', () => { controls.minDistance = 150 })
 
 // update the window everytime it is resized
 
@@ -130,9 +129,33 @@ window.addEventListener("resize", () => {
 const loop = () => {
   globe.rotation.x = 0;
   globe.rotation.y += 0.0005;
-  // globe.rotation.z += 0.001;
   controls.update();
   renderer.render(scene, camera);
   window.requestAnimationFrame(loop);
 };
 loop();
+
+// GUI
+
+const addgui = () => {
+
+  const gui = new dat.GUI()
+
+  // light settings
+  const light = gui.addFolder('light')
+  light.addColor(dlight, 'color').name('Light Color')
+  light.add(dlight, 'intensity', 0, 10).name('Light intensity')
+  const lightpostion = light.addFolder('position')
+  lightpostion.add(dlight.position, "x")
+  lightpostion.add(dlight.position, "y")
+  lightpostion.add(dlight.position, "z")
+
+  // Globe material 
+  const materialSetting = gui.addFolder('Material Setting')
+  materialSetting.addColor(globematerial, 'color')
+  materialSetting.addColor(globematerial, 'emissive')
+  materialSetting.add(globematerial, 'emissiveIntensity', 0, 10)
+  materialSetting.add(globematerial, 'shininess', 0, 100)
+
+
+}

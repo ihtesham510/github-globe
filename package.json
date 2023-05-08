@@ -14,6 +14,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "three": "^0.150.1",
     "three-globe": "^2.25.4"
   }
