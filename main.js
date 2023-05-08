@@ -36,6 +36,7 @@ const globe = new ThreeGlobe({
   .onGlobeReady(() => {
     setTimeout(() => {
       document.querySelector("#loading").classList.replace('display', 'hidden')
+      document.querySelector("#container").classList.replace('hidden', 'display')
       addgui()
     }, 100);
     globe

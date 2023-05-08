@@ -23,6 +23,29 @@ body {
   z-index: 9999;
   font-size: 2rem;
 }
+
+#container{
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: fixed;
+  top: 5%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  font-size: 1.5rem;
+}
+.link{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
+.link:hover{
+  text-decoration: underline;
+}
+
+
 .display{
   display: flex;
 }
